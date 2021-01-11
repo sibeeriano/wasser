@@ -18,7 +18,7 @@ let upload = multer({storage:storage})
 
 
 
-router.get('/',controller.listar);
+router.get('/admin',controller.listar);
 router.get('/todos',controller.listarTodos);
 
 router.get('/search',controller.search);
