@@ -1,0 +1,69 @@
+
+<!doctype html>
+<html class="no-js" lang="ES">
+<head><title>WASSER/Productos</title>
+  <%- include('./partials/head') %>     
+</head>    
+
+<body>
+  <%- include('./partials/preloader') %>
+
+<header>
+  <%- include('./partials/header') %>
+</header> 
+
+  <main>
+    <br>
+    <h1>Listado de productos <br> Vista administrador </h1>
+    <br>
+    <div class="container">    
+      <div class="row">
+        <% productos.forEach(producto => { %>            
+          <div class="col-sm-3">
+            <div class="panel panel-primary">
+              <div class="panel-heading"><%- producto.name %>  </div>
+              <div class="panel-body"><a href="/productos/<%= producto.category %>/<%= producto.id %>"><img src="/images/imagenProducto/<%=producto.image %> " class="img-responsive" style="width:100%" alt="Image"></a></div>
+              <div class="panel-footer">$<%- producto.price %> </div>
+              <div class="d-flex justify-content-center">
+              <form action="/productos/EditarProducto/<%= producto.id %>"  method="">
+              <button class="">Editar</button> 
+              </form>
+              <br>
+              <form onclick="return confirm('Estas seguro que querés eliminaro el prodcuto?')" action="/productos/delete/<%= producto.id %>?_method=delete" method="POST">
+              <button class="">Eliminar</button>
+              </form>
+              </div>    
+              <div class="panel-footer">
+                .
+              </div>
+              </div>
+              </div>
+              <% }) %>
+              </div>
+              </div>  
+              <div class="container">
+              <p class="pull-left copyright backgroun"> <a href="/productos/agregar">Agregar producto</a></li></p>
+              </div>    
+  </main>           
+  <footer>
+        <%- include('./partials/footer') %>
+  </footer>           
+        <%- include('./partials/scripts') %>  
+  </body>
+  </html>    
+  
+  
+                
+                
+            
+                
+            
+              
+              
+    
+    
+            
+ 
+
+      
+     
